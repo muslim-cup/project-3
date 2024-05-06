@@ -16,14 +16,11 @@
 </template>
 
 <script>
-import AppEmailBody from '../components/AppEmailBody'
+import AppEmailBody from '../components/AppEmailBody.vue'
 
 export default {
-  // components: {AppEmailBody},
+ components: {AppEmailBody},
   inject: ['emails'],
-  components: {
-    AppEmailBody
-  }
 }
 </script>
 

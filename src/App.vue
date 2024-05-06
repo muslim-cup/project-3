@@ -1,16 +1,31 @@
 <template>
-  <the-navbar></the-navbar>
+  <the-navbar-vue></the-navbar-vue>
   <div class="container with-nav">
-    <login></login>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import TheNavbar from './components/TheNavbar'
-import Login from './views/Login'
+import TheNavbarVue from './components/TheNavbar.vue'
+
 
 export default {
-  components: {TheNavbar, Login},
+   data () {
+    return {
+      isAuth: false
+    }
+   },
+   methods: {
+    login (){
+      isAuth = true
+      this.$router.push('/dashboard')
+    },
+    loginout(){
+      isAuth = false
+      this.$router.push("/login")
+    }
+   },
+  components: {TheNavbarVue},
   provide() {
     return {
       emails: [
